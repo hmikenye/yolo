@@ -14,13 +14,13 @@ services:
   brian-yolo-client:
     image: mikenyehenry/yollo-app:v2.0.0
     build: ./client
-    container_name: brian-yolo-client
+    container_name:   mikenye-yolo-client
     stdin_open: true
     tty: true
     ports:
       - "3000:3000"
     depends_on: 
-      - brian-yolo-backend
+      - mikenye-yolo-backend
     networks:
       - app-net
 
@@ -28,7 +28,7 @@ services:
   brian-yolo-backend:
     image: mikenyehenry/yollo-app:v2.0.0
     build: ./backend
-    container_name: brian-yolo-backend
+    container_name: mikenye-yolo-backend
     stdin_open: true
     tty: true
     restart: always
