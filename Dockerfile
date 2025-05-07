@@ -2,7 +2,7 @@
 FROM node:14-slim AS build
 
 # Set the working directory in the container
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy the package.json and package-lock.json files to the container
 COPY package*.json ./
@@ -19,10 +19,10 @@ WORKDIR /app
 
 RUN apk update && apk add npm
 
-COPY --from=build /usr/src/app /app
+COPY --
 
 # Expose the port the app runs on
-EXPOSE 5000
+EXPOSE 3000
 
 # Define the command to run your app
 CMD ["npm", "start"]
