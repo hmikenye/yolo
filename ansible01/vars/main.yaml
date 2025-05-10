@@ -1,0 +1,4 @@
+app_name: ecommerce
+docker_image_frontend: mikenyehenryip3-frontend:latest
+docker_image_backend: ecommerce_backend:latest
+docker_image_db: mikenyehenryip3:latest
