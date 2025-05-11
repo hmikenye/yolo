@@ -68,8 +68,12 @@ Vagrant.configure("2") do |config|
   #   apt-get install -y apache2
   # SHELL
   # Provisioning configuration for Ansible.
-config.vm.provision "ansible" do |ansible|
-  ansible.playbook = "playbook.yml"
-config.vm.network "forwarded_port", guest: 3000, host: 3000  
+Vagrant.configure("2") do |config|
+  config.vm.box = "geerlingguy/ubuntu2004"
+  config.vm.network "private_network", type: "dhcp"
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo apt-get update
+    sudo apt-get install -y python3 python3-pip
+  SHELL
   end
 end
