@@ -1,0 +1,31 @@
+---
+- name: Install Docker
+  apt:
+    name: docker.io
+    state: present
+    update_cache: yes
+
+- name: Start Docker
+  service:
+    name: docker
+    state: started
+    enabled: true
+
+- name: Clone frontend repo
+  git:
+    repo: "{{ app_git_repo }}"
+    dest: /home/vagrant/ecommerce
+    version: main
+
+- name: Build and run frontend container
+  docker_container:
+    name: frontend
+    image: node:14
+    command: "npm start"
+    working_dir: /home/vagrant/ecommerce/frontend
+    volumes:
+      - /home/vagrant/ecommerce/frontend:/usr/src/app
+    ports:
+      - "{{ frontend_port }}:3000"
+    state: started
+    restart_policy: always
