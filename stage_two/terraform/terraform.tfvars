@@ -1,0 +1,5 @@
+aws_region       = "us-east-1"
+ami_id           = "ami-0c55b159cbfafe1f0"
+instance_type    = "t2.micro"
+key_name         = "your-key-name"
+private_key_path = "~/.ssh/your-key.pem"
