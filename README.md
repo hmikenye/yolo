@@ -1,15 +1,19 @@
-# Overview
-This project involved the containerization and deployment of a full-stack yolo application using Docker.
 
-
-# Requirements
-Install the docker engine here:
-- [Docker](https://docs.docker.com/engine/install/) 
-
-## How to launch the application 
-
-
-![Alt text](image.png)
-
-## How to run the app
-Use vagrant up --provison command
+project-root/
+# Vagrantfile
+vagrant vm using ubuntu 20.04 (jeff geerlings base box)
+# provision.yaml
+using ansible.cfg
+# roles/
+│   ├── frontend/
+│   │   └── tasks/main.yml
+│   ├── backend/
+│   │   └── tasks/main.yml
+│   ├── database/
+│   │   └── tasks/main.yml
+├── vars/
+│   └── main.yml
+# docker container deployed using ansible
+# github clone of the e-commerce app
+├── explanation.md
+├── README.md
