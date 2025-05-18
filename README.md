@@ -17,3 +17,12 @@ using ansible.cfg
 # github clone of the e-commerce app
 ├── explanation.md
 ├── README.md
+# Kubernetes GKE E-commerce App
+
+## Live Application
+`http://EXTERNAL-IP:80`
+
+## Deployment Steps
+1. Apply all manifests:
+   ```bash
+   kubectl apply -f manifests/
